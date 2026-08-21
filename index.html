@@ -1,168 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Durga Puja Dance Competition 2026</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <div class="page">
+<div class="page">
 
-        <div class="header">
-            <div class="om">ॐ</div>
+    <div class="header">
 
-            <h1>Durga Puja Dance Competition</h1>
-            <p>2026</p>
+        <div class="om">ॐ</div>
 
-            <div class="divider">✦ ✦ ✦</div>
-        </div>
+        <h1>Durga Puja Dance Competition</h1>
 
-        <div class="registration-card">
+        <p>2026</p>
 
-            <h2>Participant Registration</h2>
-            <p class="subtitle">
-                Register now and be a part of the celebration!
-            </p>
-
-            <form>
-
-                <div class="form-group">
-                    <label>Participant Name *</label>
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Enter participant name"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label>Mobile Number *</label>
-                    <input
-                        type="tel"
-                        name="mobile"
-                        placeholder="Enter mobile number"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label>Age *</label>
-                    <input
-                        type="number"
-                        name="age"
-                        placeholder="Enter age"
-                        min="1"
-                        max="100"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label>Category *</label>
-
-                    <select name="category" required>
-                        <option value="">Select Category</option>
-                        <option value="Solo">Solo</option>
-                        <option value="Duo">Duo</option>
-                        <option value="Group">Group</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Participant Image *</label>
-
-                    <input
-                        type="file"
-                        name="image"
-                        accept="image/*"
-                        required
-                    >
-
-                    <small>Upload a clear participant photo</small>
-                </div>
-
-                <button type="submit">
-                    SUBMIT REGISTRATION
-                </button>
-
-            </form>
-
-        </div>
-
-        <div class="footer">
-            <p>🪔 शुभ दुर्गा पूजा 🪔</p>
-            <span>
-                © 2026 Durga Puja Dance Competition
-            </span>
+        <div class="divider">
+            ✦ ✦ ✦
         </div>
 
     </div>
 
+
+    <div class="registration-card">
+
+        <h2>Participant Registration</h2>
+
+        <p class="subtitle">
+            Register now and be a part of the celebration!
+        </p>
+
+
+        <form>
+
+
+            <div class="form-group">
+
+                <label>Participant Name *</label>
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter participant name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Mobile Number *</label>
+
+                <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="Enter mobile number"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Age *</label>
+
+                <input
+                    type="number"
+                    name="age"
+                    placeholder="Enter age"
+                    min="1"
+                    max="100"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Gender *</label>
+
+                <select name="gender" required>
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Category *</label>
+
+                <select name="category" required>
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Solo">
+                        Solo
+                    </option>
+
+                    <option value="Duo">
+                        Duo
+                    </option>
+
+                    <option value="Group">
+                        Group
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Dance Style *</label>
+
+                <select name="danceStyle" required>
+
+                    <option value="">
+                        Select Dance Style
+                    </option>
+
+                    <option value="Classical">
+                        Classical
+                    </option>
+
+                    <option value="Bollywood">
+                        Bollywood
+                    </option>
+
+                    <option value="Folk">
+                        Folk
+                    </option>
+
+                    <option value="Contemporary">
+                        Contemporary
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>City / Area *</label>
+
+                <input
+                    type="text"
+                    name="city"
+                    placeholder="Enter city or area"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Emergency Contact Name *</label>
+
+                <input
+                    type="text"
+                    name="emergencyName"
+                    placeholder="Enter emergency contact name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Emergency Contact Number *</label>
+
+                <input
+                    type="tel"
+                    name="emergencyNumber"
+                    placeholder="Enter emergency contact number"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Participant Image *</label>
+
+                <input
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    required>
+
+                <small>
+                    Upload a clear participant photo
+                </small>
+
+            </div>
+
+
+            <button type="submit">
+                SUBMIT REGISTRATION
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+    <div class="footer">
+
+        <p>
+            🪔 शुभ दुर्गा पूजा 🪔
+        </p>
+
+        <span>
+            For Registration Help:
+            Bijay Jha - 9267900000
+        </span>
+
+        <br>
+
+        <span>
+            © 2026 Durga Puja Dance Competition
+        </span>
+
+    </div>
+
+</div>
+
+
 <script>
+
 const scriptURL =
 "https://script.google.com/macros/s/AKfycbxsmlXNkcSuyH5XKkIOguaOPC1AR0N8Yi9KtV3-0SzyiD51D4CXIL_z8By4rXCH5mpe/exec";
 
-const form = document.querySelector("form");
 
-form.addEventListener("submit", async function(event) {
+const form =
+document.querySelector("form");
+
+
+form.addEventListener(
+"submit",
+async function(event) {
 
     event.preventDefault();
 
-    const submitButton = form.querySelector("button");
+
+    const submitButton =
+    form.querySelector("button");
+
 
     submitButton.disabled = true;
-    submitButton.textContent = "UPLOADING...";
 
-    const name = form.querySelector('[name="name"]').value;
-    const mobile = form.querySelector('[name="mobile"]').value;
-    const age = form.querySelector('[name="age"]').value;
-    const category = form.querySelector('[name="category"]').value;
+    submitButton.textContent =
+    "UPLOADING...";
 
-    const imageInput = form.querySelector('[name="image"]');
+
+    const imageInput =
+    form.querySelector('[name="image"]');
+
 
     if (!imageInput.files.length) {
-        alert("Please select participant image.");
+
+        alert(
+        "Please select participant image."
+        );
+
         submitButton.disabled = false;
-        submitButton.textContent = "SUBMIT REGISTRATION";
+
+        submitButton.textContent =
+        "SUBMIT REGISTRATION";
+
         return;
+
     }
 
-    const file = imageInput.files[0];
 
-    // Maximum image size: 2 MB
-    if (file.size > 2 * 1024 * 1024) {
-        alert("Please upload an image smaller than 2 MB.");
+    const file =
+    imageInput.files[0];
+
+
+    if (file.size >
+        2 * 1024 * 1024) {
+
+        alert(
+        "Please upload an image smaller than 2 MB."
+        );
+
         submitButton.disabled = false;
-        submitButton.textContent = "SUBMIT REGISTRATION";
+
+        submitButton.textContent =
+        "SUBMIT REGISTRATION";
+
         return;
+
     }
 
-    const reader = new FileReader();
 
-    reader.onload = async function() {
+    const reader =
+    new FileReader();
 
-        const data = new URLSearchParams();
 
-        data.append("name", name);
-        data.append("mobile", mobile);
-        data.append("age", age);
-        data.append("category", category);
-        data.append("imageData", reader.result);
+    reader.onload =
+    async function() {
+
+
+        const data =
+        new URLSearchParams();
+
+
+        data.append(
+        "name",
+        form.querySelector('[name="name"]').value
+        );
+
+
+        data.append(
+        "mobile",
+        form.querySelector('[name="mobile"]').value
+        );
+
+
+        data.append(
+        "age",
+        form.querySelector('[name="age"]').value
+        );
+
+
+        data.append(
+        "gender",
+        form.querySelector('[name="gender"]').value
+        );
+
+
+        data.append(
+        "category",
+        form.querySelector('[name="category"]').value
+        );
+
+
+        data.append(
+        "danceStyle",
+        form.querySelector('[name="danceStyle"]').value
+        );
+
+
+        data.append(
+        "city",
+        form.querySelector('[name="city"]').value
+        );
+
+
+        data.append(
+        "emergencyName",
+        form.querySelector('[name="emergencyName"]').value
+        );
+
+
+        data.append(
+        "emergencyNumber",
+        form.querySelector('[name="emergencyNumber"]').value
+        );
+
+
+        data.append(
+        "imageData",
+        reader.result
+        );
+
 
         try {
 
-            const response = await fetch(scriptURL, {
-                method: "POST",
-                body: data
-            });
+            const response =
+            await fetch(
+                scriptURL,
+                {
+                    method: "POST",
+                    body: data
+                }
+            );
 
-            const result = await response.json();
+
+            const result =
+            await response.json();
+
 
             if (result.success) {
 
@@ -180,7 +435,9 @@ form.addEventListener("submit", async function(event) {
                     "Registration failed.\n\n" +
                     result.error
                 );
+
             }
+
 
         } catch (error) {
 
@@ -192,11 +449,21 @@ form.addEventListener("submit", async function(event) {
 
         }
 
+
         submitButton.disabled = false;
+
         submitButton.textContent =
-            "SUBMIT REGISTRATION";
+        "SUBMIT REGISTRATION";
+
     };
 
+
     reader.readAsDataURL(file);
+
 });
+
 </script>
+
+</body>
+
+</html>
