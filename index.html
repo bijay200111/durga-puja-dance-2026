@@ -104,93 +104,99 @@
 
     </div>
 
-    <script>
-        const scriptURL =
-        "https://script.google.com/macros/s/AKfycbxsmlXNkcSuyH5XKkIOguaOPC1AR0N8Yi9KtV3-0SzyiD51D4CXIL_z8By4rXCH5mpe/exec";
+<script>
+const scriptURL =
+"https://script.google.com/macros/s/AKfycbxsmlXNkcSuyH5XKkIOguaOPC1AR0N8Yi9KtV3-0SzyiD51D4CXIL_z8By4rXCH5mpe/exec";
 
-        const form = document.querySelector("form");
+const form = document.querySelector("form");
 
-        form.addEventListener("submit", function(event) {
+form.addEventListener("submit", async function(event) {
 
-            event.preventDefault();
+    event.preventDefault();
 
-            const submitButton =
-                form.querySelector("button");
+    const submitButton = form.querySelector("button");
 
-            submitButton.disabled = true;
-            submitButton.textContent = "SUBMITTING...";
+    submitButton.disabled = true;
+    submitButton.textContent = "UPLOADING...";
 
-            const data = new URLSearchParams();
+    const name = form.querySelector('[name="name"]').value;
+    const mobile = form.querySelector('[name="mobile"]').value;
+    const age = form.querySelector('[name="age"]').value;
+    const category = form.querySelector('[name="category"]').value;
 
-            data.append(
-                "name",
-                form.querySelector('[name="name"]').value
-            );
+    const imageInput = form.querySelector('[name="image"]');
 
-            data.append(
-                "mobile",
-                form.querySelector('[name="mobile"]').value
-            );
+    if (!imageInput.files.length) {
+        alert("Please select participant image.");
+        submitButton.disabled = false;
+        submitButton.textContent = "SUBMIT REGISTRATION";
+        return;
+    }
 
-            data.append(
-                "age",
-                form.querySelector('[name="age"]').value
-            );
+    const file = imageInput.files[0];
 
-            data.append(
-                "category",
-                form.querySelector('[name="category"]').value
-            );
+    // Maximum image size: 2 MB
+    if (file.size > 2 * 1024 * 1024) {
+        alert("Please upload an image smaller than 2 MB.");
+        submitButton.disabled = false;
+        submitButton.textContent = "SUBMIT REGISTRATION";
+        return;
+    }
 
-            data.append("image", "");
+    const reader = new FileReader();
 
-            fetch(scriptURL, {
+    reader.onload = async function() {
+
+        const data = new URLSearchParams();
+
+        data.append("name", name);
+        data.append("mobile", mobile);
+        data.append("age", age);
+        data.append("category", category);
+        data.append("imageData", reader.result);
+
+        try {
+
+            const response = await fetch(scriptURL, {
                 method: "POST",
                 body: data
-            })
-
-            .then(response => response.json())
-
-            .then(result => {
-
-                if (result.success) {
-
-                    alert(
-                        "Registration Successful!\n\n" +
-                        "Registration ID: " +
-                        result.registrationId
-                    );
-
-                    form.reset();
-
-                } else {
-
-                    alert("Registration failed.");
-
-                }
-
-                submitButton.disabled = false;
-                submitButton.textContent =
-                    "SUBMIT REGISTRATION";
-
-            })
-
-            .catch(error => {
-
-                console.error(error);
-
-                alert(
-                    "Something went wrong. Please try again."
-                );
-
-                submitButton.disabled = false;
-                submitButton.textContent =
-                    "SUBMIT REGISTRATION";
-
             });
 
-        });
-    </script>
+            const result = await response.json();
 
-</body>
-</html>
+            if (result.success) {
+
+                alert(
+                    "Registration Successful!\n\n" +
+                    "Registration ID: " +
+                    result.registrationId
+                );
+
+                form.reset();
+
+            } else {
+
+                alert(
+                    "Registration failed.\n\n" +
+                    result.error
+                );
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                "Something went wrong. Please try again."
+            );
+
+        }
+
+        submitButton.disabled = false;
+        submitButton.textContent =
+            "SUBMIT REGISTRATION";
+    };
+
+    reader.readAsDataURL(file);
+});
+</script>
