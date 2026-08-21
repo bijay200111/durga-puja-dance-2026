@@ -3,38 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Durga Puja Dance Competition 2026</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Durga Puja Dance Competition 2026</h1>
+    <div class="page">
 
-    <h2>Participant Registration</h2>
+        <div class="header">
+            <div class="om">ॐ</div>
 
-    <form>
-        <label>Participant Name</label><br>
-        <input type="text" required><br><br>
+            <h1>Durga Puja Dance Competition</h1>
+            <p>2026</p>
 
-        <label>Mobile Number</label><br>
-        <input type="tel" required><br><br>
+            <div class="divider">✦ ✦ ✦</div>
+        </div>
 
-        <label>Age</label><br>
-        <input type="number" required><br><br>
+        <div class="registration-card">
 
-        <label>Category</label><br>
-        <select required>
-            <option value="">Select Category</option>
-            <option>Solo</option>
-            <option>Duo</option>
-            <option>Group</option>
-        </select><br><br>
+            <h2>Participant Registration</h2>
+            <p class="subtitle">Register now and be a part of the celebration!</p>
 
-        <label>Participant Image</label><br>
-        <input type="file" accept="image/*" required><br><br>
+            <form>
 
-        <button type="submit">Submit Registration</button>
-    </form>
+                <div class="form-group">
+                    <label>Participant Name *</label>
+                    <input type="text" placeholder="Enter participant name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile Number *</label>
+                    <input type="tel" placeholder="Enter mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Age *</label>
+                    <input type="number" placeholder="Enter age" min="1" max="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category *</label>
+                    <select required>
+                        <option value="">Select Category</option>
+                        <option value="Solo">Solo</option>
+                        <option value="Duo">Duo</option>
+                        <option value="Group">Group</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Participant Image *</label>
+                    <input type="file" accept="image/*" required>
+                    <small>Upload a clear participant photo</small>
+                </div>
+
+                <button type="submit">
+                    SUBMIT REGISTRATION
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="footer">
+            <p>🪔 शुभ दुर्गा पूजा 🪔</p>
+            <span>© 2026 Durga Puja Dance Competition</span>
+        </div>
+
+    </div>
 
 </body>
 </html>
