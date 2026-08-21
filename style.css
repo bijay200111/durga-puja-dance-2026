@@ -5,56 +5,144 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #fff4e6;
+    background: linear-gradient(135deg, #fff1d6, #ffe0b2);
     color: #333;
 }
 
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+.page {
+    min-height: 100vh;
+    padding: 30px 15px;
 }
 
-h1 {
+.header {
     text-align: center;
-    color: #b30000;
-}
-
-h2 {
-    text-align: center;
-    color: #e65c00;
     margin-bottom: 25px;
 }
 
-label {
+.om {
+    font-size: 45px;
+    color: #b30000;
+    margin-bottom: 5px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #9b0000;
+}
+
+.header p {
+    margin: 5px 0;
+    font-size: 22px;
     font-weight: bold;
+    color: #e65100;
+}
+
+.divider {
+    color: #d4a017;
+    margin-top: 10px;
+    letter-spacing: 8px;
+}
+
+.registration-card {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-top: 6px solid #b30000;
+}
+
+.registration-card h2 {
+    text-align: center;
+    margin: 0;
+    color: #b30000;
+    font-size: 25px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #444;
 }
 
 input,
 select {
     width: 100%;
-    padding: 12px;
-    margin-top: 7px;
+    padding: 13px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #d35400;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    color: #777;
 }
 
 button {
     width: 100%;
-    padding: 14px;
+    padding: 15px;
     border: none;
     border-radius: 8px;
-    background: #d62828;
+    background: #b30000;
     color: white;
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 button:hover {
-    background: #a71919;
+    background: #850000;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #777;
+}
+
+.footer p {
+    color: #b30000;
+    font-weight: bold;
+}
+
+.footer span {
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .registration-card {
+        padding: 22px;
+    }
 }
