@@ -25,28 +25,48 @@
         <div class="registration-card">
 
             <h2>Participant Registration</h2>
-            <p class="subtitle">Register now and be a part of the celebration!</p>
+            <p class="subtitle">
+                Register now and be a part of the celebration!
+            </p>
 
             <form>
 
                 <div class="form-group">
                     <label>Participant Name *</label>
-                    <input type="text" placeholder="Enter participant name" required>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter participant name"
+                        required
+                    >
                 </div>
 
                 <div class="form-group">
                     <label>Mobile Number *</label>
-                    <input type="tel" placeholder="Enter mobile number" required>
+                    <input
+                        type="tel"
+                        name="mobile"
+                        placeholder="Enter mobile number"
+                        required
+                    >
                 </div>
 
                 <div class="form-group">
                     <label>Age *</label>
-                    <input type="number" placeholder="Enter age" min="1" max="100" required>
+                    <input
+                        type="number"
+                        name="age"
+                        placeholder="Enter age"
+                        min="1"
+                        max="100"
+                        required
+                    >
                 </div>
 
                 <div class="form-group">
                     <label>Category *</label>
-                    <select required>
+
+                    <select name="category" required>
                         <option value="">Select Category</option>
                         <option value="Solo">Solo</option>
                         <option value="Duo">Duo</option>
@@ -56,7 +76,14 @@
 
                 <div class="form-group">
                     <label>Participant Image *</label>
-                    <input type="file" accept="image/*" required>
+
+                    <input
+                        type="file"
+                        name="image"
+                        accept="image/*"
+                        required
+                    >
+
                     <small>Upload a clear participant photo</small>
                 </div>
 
@@ -70,55 +97,100 @@
 
         <div class="footer">
             <p>🪔 शुभ दुर्गा पूजा 🪔</p>
-            <span>© 2026 Durga Puja Dance Competition</span>
+            <span>
+                © 2026 Durga Puja Dance Competition
+            </span>
         </div>
 
     </div>
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbxsmlXNkcSuyH5XKkIOguaOPC1AR0N8Yi9KtV3-0SzyiD51D4CXIL_z8By4rXCH5mpe/exec";
 
-const form = document.querySelector("form");
+    <script>
+        const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxsmlXNkcSuyH5XKkIOguaOPC1AR0N8Yi9KtV3-0SzyiD51D4CXIL_z8By4rXCH5mpe/exec";
 
-form.addEventListener("submit", async function(event) {
-    event.preventDefault();
+        const form = document.querySelector("form");
 
-    const name = form.querySelector('input[type="text"]').value;
-    const mobile = form.querySelector('input[type="tel"]').value;
-    const age = form.querySelector('input[type="number"]').value;
-    const category = form.querySelector("select").value;
+        form.addEventListener("submit", function(event) {
 
-    const data = {
-        name: name,
-        mobile: mobile,
-        age: age,
-        category: category,
-        image: ""
-    };
+            event.preventDefault();
 
-    try {
-        const response = await fetch(scriptURL, {
-            method: "POST",
-            body: JSON.stringify(data)
-        });
+            const submitButton =
+                form.querySelector("button");
 
-        const result = await response.json();
+            submitButton.disabled = true;
+            submitButton.textContent = "SUBMITTING...";
 
-        if (result.success) {
-            alert(
-                "Registration Successful!\n\nRegistration ID: " +
-                result.registrationId
+            const data = new URLSearchParams();
+
+            data.append(
+                "name",
+                form.querySelector('[name="name"]').value
             );
 
-            form.reset();
-        } else {
-            alert("Registration failed. Please try again.");
-        }
+            data.append(
+                "mobile",
+                form.querySelector('[name="mobile"]').value
+            );
 
-    } catch (error) {
-        console.error(error);
-        alert("Something went wrong. Please try again.");
-    }
-});
-</script>
+            data.append(
+                "age",
+                form.querySelector('[name="age"]').value
+            );
+
+            data.append(
+                "category",
+                form.querySelector('[name="category"]').value
+            );
+
+            data.append("image", "");
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: data
+            })
+
+            .then(response => response.json())
+
+            .then(result => {
+
+                if (result.success) {
+
+                    alert(
+                        "Registration Successful!\n\n" +
+                        "Registration ID: " +
+                        result.registrationId
+                    );
+
+                    form.reset();
+
+                } else {
+
+                    alert("Registration failed.");
+
+                }
+
+                submitButton.disabled = false;
+                submitButton.textContent =
+                    "SUBMIT REGISTRATION";
+
+            })
+
+            .catch(error => {
+
+                console.error(error);
+
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
+                submitButton.disabled = false;
+                submitButton.textContent =
+                    "SUBMIT REGISTRATION";
+
+            });
+
+        });
+    </script>
+
 </body>
 </html>
