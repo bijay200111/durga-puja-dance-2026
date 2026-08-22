@@ -153,13 +153,6 @@ button:hover {
     border-radius: 20px;
     overflow: hidden;
 
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.45)
-        ),
-        url("https://share.google/rV79bijLrCBLzooFy");
-
     background-size: cover;
     background-position: center;
 
